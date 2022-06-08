@@ -4,7 +4,7 @@ const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 // TODO: Create an array of questions for user input
 const questions = [];
-const licenses = ['none','Apache', 'BSD', 'Attribution','GNU','IBM','MIT','Mozilla','Perl']
+const licenses = ['None','Apache', 'BSD','MIT','GPLv3']
 promptUser = () => {
     return inquirer.prompt([
         {
@@ -34,19 +34,19 @@ promptUser = () => {
         },
         {
             type:'input',
-            name:'Test Instructions',
+            name:'TestInstructions',
             message:'Please write tests for this project and include instructions how to run them',
         },
         {
             type:'input',
-            name: 'GitHub Username',
+            name: 'GitHubUsername',
             message:'Pleae enter your github username',
         },
         {
             type:'input',
             name: 'Email',
             message:'Please enter your Email Address',
-        }
+        },
         {
             type: 'checkbox',
             name: 'license',
@@ -55,28 +55,29 @@ promptUser = () => {
         },
     ])
 }
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFile('./dist/README.md', data, err => {
-        if (err) {
-          console.log(err);
-        } else {
-          console.log("Your README has been generated")
-        }
+// function writeToFile(fileName, data) {}
+const writeToFile = data => {
+    fs.writeFile('./generated/README.md', data, err => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("Your README has been generated")
+      }
     })
-};   
-
-// TODO: Create a function to initialize app
-const init = () => {
-    console.clear();
-    promptUser()
-      .then((answers) => writeToFile(answers.licenses))
-      .then(() => {
-                    console.clear();
-                    console.log(`Successfully wrote to file`);
-                  })
-      .catch((err) => console.error(err));
   };
-
-// Function call to initialize app
-init();
+  
+    
+  // Function call to initialize app
+  promptUser()
+  // function to write README file
+    .then(answers => {
+      console.log(answers.license)
+      return generateMarkdown(answers);
+    })
+    .then(answers => {
+      return writeToFile(answers);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+    
