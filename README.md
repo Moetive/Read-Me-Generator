@@ -22,7 +22,7 @@
   ## Questions
     
   For any questions, feel free to reach out to me at undefined 
-  ## github link 
+  ## GitHub 
 Moetive
   ## License
   This application is not covered under any license
