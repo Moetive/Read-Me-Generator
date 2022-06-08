@@ -1,6 +1,6 @@
-# s
+# Read Me Generator
   ## Description
-  
+  This application generates readme
   ## Table of Contents
   - [Installation](#Installation)
   - [Usage](#Usage)
@@ -9,18 +9,18 @@
   - [Questions](#questions)
   - [License](#license)
   ## Installation
-  s
+  use npm i and node index.js to initiate application
   ## Usage
-  s
+  to generate readme's
   ## Contribution
-  s
+  none
   ## Tests
-  s
+  use NPM i and node index.js to run
   ## Questions
     
   For any questions, feel free to reach out to me at undefined 
   ## github link 
-s
+Moetive
   ## License
-  [This application is covered under the Apache 2.0 license. Click here for more information](https://opensource.org/licenses/Apache-2.0)
+  This application is not covered under any license
 
